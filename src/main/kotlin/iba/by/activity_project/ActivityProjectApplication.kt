@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class ActivityProjectApplication
+open class ActivityProjectApplication
 
 fun main(args: Array<String>) {
 	runApplication<ActivityProjectApplication>(*args)
