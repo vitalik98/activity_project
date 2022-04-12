@@ -1,7 +1,15 @@
 package iba.by.activity_project.entity
 
-import org.springframework.data.relational.core.mapping.Table
-import javax.persistence.Id
+import javax.persistence.*
 
-@Table("Users")
-data class User(@Id val id: Long?, val name: String)
+@Entity
+@Table(name = "users")
+class User(
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    val id: Long?,
+    val name: String
+    ) {
+    constructor() : this(null,"")
+
+}

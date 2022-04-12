@@ -1,17 +1,20 @@
 package iba.by.activity_project.resource
 
 
+import iba.by.activity_project.entity.User
 import iba.by.activity_project.service.UserService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/users")
 class UserResource(private val userService: UserService) {
 
-
-
-    @GetMapping("/users")
+    @GetMapping
     fun index() = userService.getAllUsers()
+
+    @PostMapping
+    fun post(@RequestBody user: User) = userService.post(user)
+
+    @DeleteMapping("/{id}")
+    fun delete(@PathVariable id: Long) = userService.deleteUser(id)
 }

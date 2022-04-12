@@ -7,5 +7,10 @@ import org.springframework.stereotype.Service
 @Service
 class UserService(private val db: UserRepository) {
 
-    fun getAllUsers(): List<User> = db.findUsers()
+    fun getAllUsers(): List<User> = db.findAll()
+
+    fun post(user: User) = db.save(user)
+
+    fun deleteUser(id: Long) = db.deleteById(id)
+
 }
