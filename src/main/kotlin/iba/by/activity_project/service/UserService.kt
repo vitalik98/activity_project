@@ -6,15 +6,14 @@ import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class UserService(private val db: UserRepository) {
+class UserService(private val userRepository: UserRepository) {
 
-    fun getAllUsers(): List<User> = db.findAll()
+    fun getAllUsers(): List<User> = userRepository.findAll()
 
-    fun post(user: User) = db.save(user)
+    fun post(user: User) = userRepository.save(user)
 
+    fun deleteUser(id: Long) = userRepository.deleteById(id)
 
-    fun deleteUser(id: Long) = db.deleteById(id)
-
-    fun findUserById(id: Long): Optional<User> = db.findById(id)
+    fun findUserById(id: Long): Optional<User> = userRepository.findById(id)
 
 }
