@@ -8,7 +8,7 @@ import javax.persistence.*
 @Table(name="reports")
 class Report(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id:Long?,
 
     @ManyToOne

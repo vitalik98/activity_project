@@ -4,20 +4,20 @@ drop table if exists projects;
 drop table if exists users;
 create table users
 (
-    id   bigint       not null
+    id   bigint       not null auto_increment
         primary key,
     name varchar(255) null
 );
 create table projects
 (
-    id   bigint       not null
+    id   bigint       not null auto_increment
         primary key,
     name varchar(255) null,
     type varchar(255) null
 );
 create table reports
 (
-    id          bigint       not null
+    id          bigint       not null auto_increment
         primary key,
     activities  varchar(255) null,
     days_absent int          null,
@@ -33,7 +33,7 @@ create table reports
 );
 create table user_project
 (
-    id         bigint not null
+    id         bigint not null auto_increment
         primary key,
     project_id bigint null,
     user_id    bigint null,
