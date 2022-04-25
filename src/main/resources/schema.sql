@@ -1,21 +1,17 @@
-drop table if exists user_project;
-drop table if exists reports;
-drop table if exists projects;
-drop table if exists users;
-create table users
+create table if not exists users
 (
     id   bigint       not null auto_increment
         primary key,
     name varchar(255) null
 );
-create table projects
+create table if not exists projects
 (
     id   bigint       not null auto_increment
         primary key,
     name varchar(255) null,
     type varchar(255) null
 );
-create table reports
+create table if not exists reports
 (
     id          bigint       not null auto_increment
         primary key,
@@ -31,7 +27,7 @@ create table reports
     constraint reports_users_id_fk
         foreign key (user_id) references users (id)
 );
-create table user_project
+create table if not exists user_project
 (
     id         bigint not null auto_increment
         primary key,
