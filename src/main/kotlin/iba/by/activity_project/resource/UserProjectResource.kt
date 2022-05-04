@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*
 import java.util.*
 
 @RestController
-@RequestMapping("/api/userProject")
+@RequestMapping("/api/v1/userProject")
 class UserProjectResource(private val userProjectService: UserProjectService) {
 
     @GetMapping
